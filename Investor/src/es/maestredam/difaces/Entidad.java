@@ -10,16 +10,15 @@ package es.maestredam.difaces;
  *
  * @author Eugenio Romero ciudad
  */
-public class Entidad implements Comparable{
-    private int id;
-    private String nombre;
+public class Entidad {
+    private static int contador=0;
+    private int id;    
     private int mesInicio;
     private int mesFin;
-    private int rentabilidad;
+    private double rentabilidad;
 
-    public Entidad(int id, String nombre, int mesInicio, int mesFin, int rentabilidad) {
-        this.id = id;
-        this.nombre = nombre;
+    public Entidad(int mesInicio, int mesFin, double rentabilidad) {
+        this.id = contador++;        
         this.mesInicio = mesInicio;
         this.mesFin = mesFin;
         this.rentabilidad = rentabilidad;
@@ -27,10 +26,6 @@ public class Entidad implements Comparable{
 
     public int getId() {
         return id;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     public int getMesInicio() {
@@ -41,16 +36,28 @@ public class Entidad implements Comparable{
         return mesFin;
     }
 
-    public int getRentabilidad() {
+    public double getRentabilidad() {
         return rentabilidad;
     }
-
-    @Override
-    public int compareTo(Object o) {
-        Entidad e = (Entidad) o;
-        return e.rentabilidad - this.rentabilidad ;
-    }
     
+    public double getTotal (){
+        return (this.mesFin-this.mesInicio + 1)*this.rentabilidad;
+    }
+            
+    public boolean esSolapable(Entidad e){
+        boolean solapado = false;
+        
+        if(e.getMesFin() >= this.mesInicio && e.getMesFin() <= this.mesFin)
+            solapado = true;
+        
+        if(e.getMesInicio() <= this.mesFin && e.getMesInicio() >= this.mesInicio)
+            solapado = true;
+        
+        if(e.getMesInicio() <= this.mesInicio && e.getMesFin() >= this.mesFin)
+            solapado = true;
+        
+        return solapado;
+    }     
     
     
 }
