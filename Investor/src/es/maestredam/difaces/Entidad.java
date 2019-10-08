@@ -11,7 +11,7 @@ package es.maestredam.difaces;
  * @author Eugenio Romero ciudad
  */
 public class Entidad {
-    private static int contador=0;
+    private static int contador=1;
     private int id;    
     private int mesInicio;
     private int mesFin;

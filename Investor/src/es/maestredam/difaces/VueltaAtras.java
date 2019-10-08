@@ -19,24 +19,22 @@ public class VueltaAtras {
         this.entidades = entidades;
         LinkedList<Entidad> sol = backtracking(0, new LinkedList<Entidad>(), new LinkedList<Entidad>());
         System.out.println("Fin");
-        //print(sol);
+        System.out.println(sol);
     }
     
     private LinkedList<Entidad> backtracking(int stage, LinkedList<Entidad> mejor, LinkedList<Entidad> escogidas){
         int i;
-        if(stage == entidades.length && esMejor(escogidas, mejor)){
+        if(stage >= entidades.length && esMejor(escogidas, mejor)){
             mejor = escogidas;
-            System.out.println(mejor);
+            print(mejor);
+            escogidas.clear();
             return mejor;
         }else{
             for(i = 0; i < entidades.length; i++){
-                if(escogidas.isEmpty())
+                if(!seSolapan(escogidas, entidades[i])){
                     escogidas.add(entidades[i]);
-                else
-                    if(!seSolapan(escogidas, entidades[i]))
-                        escogidas.add(entidades[i]);
-                    
-                backtracking(stage+1, mejor, escogidas);
+                }  
+                
             }
         }
         return null;
@@ -44,27 +42,29 @@ public class VueltaAtras {
     
     
     private boolean seSolapan(LinkedList<Entidad> lista, Entidad e){
-        boolean seguir = true;
-        for(int i = 0; i < lista.size() && seguir; i++)
+        boolean seguir = false;
+        for(int i = 0; i < lista.size() && !seguir; i++)
             seguir = lista.get(i).esSolapable(e);
         
         return seguir;
     }
-    
-    private void rellenar(Entidad e, int[] year){
-        for(int i = e.getMesInicio()-1; i < e.getMesFin(); i++)
-            year[i] = e.getId();
-    }
-    
+        
     private boolean esMejor(LinkedList<Entidad> actual, LinkedList<Entidad> mejor){
         int sum = 0, mSum = 0;
-        for(Entidad e : actual)
-            sum += e.getTotal();
+        for(Entidad e1 : actual)
+            sum += e1.getTotal();
         
-        for(Entidad e : mejor)
-            mSum += e.getTotal();
+        for(Entidad e2 : mejor)
+            mSum += e2.getTotal();
         
         
         return sum > mSum;
     }
+    
+    private void print(LinkedList<Entidad> lista){
+        for(Entidad e : lista)
+            System.out.print(e.getId()+" , ");
+        System.out.println("");
+    }
+    
 }
