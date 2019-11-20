@@ -1,0 +1,11 @@
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.exe
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.deps.json
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.runtimeconfig.json
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.runtimeconfig.dev.json
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.dll
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\bin\Debug\netcoreapp3.0\GandalfSpockYoda.pdb
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\obj\Debug\netcoreapp3.0\GandalfSpockYoda.csprojAssemblyReference.cache
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\obj\Debug\netcoreapp3.0\GandalfSpockYoda.AssemblyInfoInputs.cache
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\obj\Debug\netcoreapp3.0\GandalfSpockYoda.AssemblyInfo.cs
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\obj\Debug\netcoreapp3.0\GandalfSpockYoda.dll
+C:\Users\erome\Documents\GitHub\CSharp\GandalfSpockYoda\GandalfSpockYoda\obj\Debug\netcoreapp3.0\GandalfSpockYoda.pdb

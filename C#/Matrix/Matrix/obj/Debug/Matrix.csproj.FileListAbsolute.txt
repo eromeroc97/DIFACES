@@ -1,0 +1,13 @@
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\obj\Debug\Matrix.csprojAssemblyReference.cache
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\bin\Debug\Matrix.exe.config
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\bin\Debug\Matrix.exe
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\bin\Debug\Matrix.pdb
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\obj\Debug\Matrix.exe
+C:\Users\erome\Documents\GitHub\CSharp\Matrix\Matrix\obj\Debug\Matrix.pdb
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\bin\Debug\Matrix.exe.config
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\bin\Debug\Matrix.exe
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\bin\Debug\Matrix.pdb
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\obj\Debug\Matrix.csprojAssemblyReference.cache
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\obj\Debug\Matrix.csproj.CoreCompileInputs.cache
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\obj\Debug\Matrix.exe
+D:\GitHub\DIFACES_CSHARP\Matrix\Matrix\obj\Debug\Matrix.pdb
