@@ -40,8 +40,9 @@ namespace LoginWithOracle
          * Method to insert data in a table
          * Parameter: Sentence 
          */
-        public void setData(String sentencia)
+        public int setData(String sentencia)
         {
+            int result = -1;
             OracleConnection objConexion;
             OracleCommand objComando;
 
@@ -49,8 +50,9 @@ namespace LoginWithOracle
             objConexion.Open();
             objComando = new OracleCommand(sentencia, objConexion);
 
-            objComando.ExecuteNonQuery();
+            result = objComando.ExecuteNonQuery();
             objComando.Connection.Close();
+            return result;
         }
 
         /**

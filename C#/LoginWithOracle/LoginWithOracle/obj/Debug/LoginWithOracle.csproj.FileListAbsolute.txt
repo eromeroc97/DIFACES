@@ -11,7 +11,9 @@ D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\LoginWithOracle.c
 D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\LoginWithOracle.csproj.CoreCompileInputs.cache
 D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\LoginWithOracle.exe
 D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\LoginWithOracle.pdb
-D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\MainWindow.g.cs
-D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\MainWindow.baml
 D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\LoginWithOracle.csproj.CopyComplete
 D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\Presentacion\MainWindow.g.cs
+D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\Presentacion\MainWindow.baml
+D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\Presentacion\AllUsersGUI.g.cs
+D:\GitHub\DIFACES\C#\LoginWithOracle\LoginWithOracle\obj\Debug\Presentacion\AllUsersGUI.baml

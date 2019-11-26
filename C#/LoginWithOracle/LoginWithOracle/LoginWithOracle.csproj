@@ -59,7 +59,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Presentacion\AllUsersGUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -67,8 +71,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConnectOracle.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Dominio\DAO\UserDAO.cs" />
+    <Compile Include="Dominio\User.cs" />
+    <Compile Include="Persistencia\ConnectOracle.cs" />
+    <Compile Include="Presentacion\AllUsersGUI.xaml.cs">
+      <DependentUpon>AllUsersGUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
