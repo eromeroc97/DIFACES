@@ -1,4 +1,5 @@
-﻿using LoginWithOracle.Dominio.DAO;
+﻿using LoginWithOracle.Dominio;
+using LoginWithOracle.Dominio.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,16 +22,21 @@ namespace LoginWithOracle.Presentacion
     /// </summary>
     public partial class AllUsersGUI : Window
     {
-        UserDAO udao;
+        User u;
         public AllUsersGUI()
         {
             InitializeComponent();
             CenterWindowOnScreen();
-            udao = UserDAO.getInstance();
-            udao.readUsers();
-            DataTable usersData = udao.getUsers();
+            loadDataTable();
+        }
+
+        private void loadDataTable()
+        {
+            u = new User();
+            DataTable usersData = u.loadUsers();
             datagridUsers.DataContext = usersData.DefaultView;
-            
+            datagridUsers.FrozenColumnCount = 2;
+            datagridUsers.IsReadOnly = true;
         }
 
         private void CenterWindowOnScreen()
@@ -41,6 +47,50 @@ namespace LoginWithOracle.Presentacion
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataRowView row = (DataRowView)datagridUsers.SelectedItems[0];
+            txtLogin.Text = row["Login"].ToString();
+            txtPassword.Password = deencrypt(row["Password"].ToString());
+        }
+        public static string deencrypt(String ePass)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(ePass);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+
+        private void BtnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int val = u.insert(txtLogin.Text, txtPassword.Password);
+                if (val > 0)
+                {
+                    MessageBox.Show("User inserted correctly!");
+                    loadDataTable();
+                }
+                else
+                    MessageBox.Show("User could not be inserted");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error while inserting");
+            }
+        }
+
+        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

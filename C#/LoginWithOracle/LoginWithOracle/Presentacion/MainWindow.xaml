@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginWithOracle"
         mc:Ignorable="d"
-        Title="Login" Height="380" Width="310" VerticalAlignment="Center" HorizontalAlignment="Center">
+        Title="Login" Height="385" Width="310" VerticalAlignment="Center" HorizontalAlignment="Center">
     <Grid Background="#FF260595">
         <Label x:Name="lblUser" HorizontalContentAlignment="Center" Content="USER" Margin="0,34,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White"/>
         <Label x:Name="lblPassword" HorizontalContentAlignment="Center" Content="PASSWORD" Margin="0,130,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <TextBox x:Name="txtUser" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Margin="70,78,70,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="txtPassword" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="36" Margin="70,168,70,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <PasswordBox x:Name="txtPassword" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="36" Margin="70,168,70,0" VerticalAlignment="Top" FontSize="16"/>
         <Button x:Name="btnLogIn" Content="Log in" Margin="70,252,70,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Click="BtnLogIn_Click"/>
-        <Button x:Name="btnRegister" Content="Register" Margin="70,295,70,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Click="BtnRegister_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Margin="70,304,70,0" IsCancel="True" FontWeight="Bold" FontSize="16" Click="BtnCancel_Click" Height="25" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

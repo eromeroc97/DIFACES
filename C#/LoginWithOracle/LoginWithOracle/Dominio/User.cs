@@ -1,6 +1,7 @@
 ﻿using LoginWithOracle.Dominio.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,22 +12,19 @@ namespace LoginWithOracle.Dominio
     {
         private string login;
         private string password;
-        private UserDAO u;
+        private UserDAO gestor;
 
         public User()
         {
-            this.u = UserDAO.getInstance();
+            this.gestor = UserDAO.getInstance();
         }
         public User(String login, String password)
         {
-            this.u = UserDAO.getInstance();
+            this.gestor = UserDAO.getInstance();
             this.login = login;
             this.password = password;
         }
-        public UserDAO gestor()
-        {
-            return this.u;
-        }
+        
         public String getLogin()
         {
             return this.login;
@@ -41,6 +39,24 @@ namespace LoginWithOracle.Dominio
             byte[] encryted = System.Text.Encoding.Unicode.GetBytes(pass);
             result = Convert.ToBase64String(encryted);
             return result;
+        }
+
+        public DataTable loadUsers()
+        {
+            gestor.readUsers();
+            return gestor.getUsers();
+        }
+
+        public Boolean searchUser(String login, String password)
+        {
+            User u = new User(login, password);
+            return gestor.searchUser(u);
+        }
+
+        public int insert(String login, String password)
+        {
+            User u = new User(login, password);
+            return gestor.insert(u);
         }
     }
 }

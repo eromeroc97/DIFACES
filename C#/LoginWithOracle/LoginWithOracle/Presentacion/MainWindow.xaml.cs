@@ -45,11 +45,10 @@ namespace LoginWithOracle
 
         private void BtnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            if(txtUser.Text != "" && txtPassword.Text != "")
+            if(txtUser.Text != "" && txtPassword.Password != "")
             {
-                if(u.gestor().searchUser(new User(txtUser.Text, txtPassword.Text)))
+                if(u.searchUser(txtUser.Text, txtPassword.Password))
                 {
-                    MessageBox.Show("Successful Login");
                     clearFields();
                     AllUsersGUI ventana = new AllUsersGUI();
                     ventana.Visibility = Visibility.Visible;
@@ -61,27 +60,15 @@ namespace LoginWithOracle
             }
         }
 
-        private void BtnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtUser.Text != "" && txtPassword.Text != "")
-            {
-                if(u.gestor().insert(new User(txtUser.Text, txtPassword.Text)) > 0)
-                {
-                    MessageBox.Show("Successful Register");
-                    clearFields();
-                }
-                else
-                {
-                    MessageBox.Show("Incorrect Register");
-                }
-
-            }
-        }
-
         private void clearFields()
         {
             txtUser.Clear();
             txtPassword.Clear();
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 

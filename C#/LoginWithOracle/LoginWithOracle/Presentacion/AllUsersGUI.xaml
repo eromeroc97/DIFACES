@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginWithOracle.Presentacion"
         mc:Ignorable="d"
-        Title="AllUsersGUI" Height="366.495" Width="373.196">
+        Title="AllUsersGUI" Height="366.495" Width="393.196">
     <Grid>
-        <DataGrid x:Name="datagridUsers" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="309" Margin="10,10,0,0" VerticalAlignment="Top" Width="341"/>
+        <DataGrid x:Name="datagridUsers" ItemsSource="{Binding}" Height="309" Margin="10,10,148,0" VerticalAlignment="Top">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+        <TextBox x:Name="txtLogin" Height="23" Margin="250,43,15,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" Margin="250,102,15,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Login" Margin="250,12,96,0" VerticalAlignment="Top"/>
+        <Label Content="Password" Margin="251,71,74,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnInsert" Content="Insert" Margin="251,150,15,0" VerticalAlignment="Top" Click="BtnInsert_Click"/>
+        <Button x:Name="btnModify" Content="Modify" Margin="251,190,15,0" VerticalAlignment="Top" Click="BtnModify_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" Margin="251,228,15,0" VerticalAlignment="Top" Click="BtnDelete_Click"/>
 
     </Grid>
 </Window>

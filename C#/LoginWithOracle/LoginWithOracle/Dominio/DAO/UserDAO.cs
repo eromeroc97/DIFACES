@@ -34,10 +34,8 @@ namespace LoginWithOracle.Dominio.DAO
         public Boolean searchUser(User u)
         {
             ConnectOracle con = new ConnectOracle();
-            String sql = "SELECT COUNT(*) AS NUM_USER FROM USERS WHERE LOGIN='" + u.getLogin() + "' AND PASSWORD='" + u.getPassword() + "'";
-            DataSet ds = con.getData(sql, "USERS");
-            int test = Int32.Parse(ds.Tables[0].Rows[0]["NUM_USER"].ToString());
-            return test > 0;
+            return !con.DLookUp("LOGIN","USERS",
+                "LOGIN='"+u.getLogin()+"' AND PASSWORD='"+u.getPassword()+"'").Equals(-1);
         }
         public void readUsers()
         {

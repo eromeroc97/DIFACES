@@ -86,7 +86,7 @@ namespace LoginWithOracle
             {
                 resultado = requestQuery.Tables[0].Rows[0][requestQuery.Tables[0].Columns.IndexOf(columna)];
             }
-            catch (Exception a)
+            catch (Exception)
             {
                 resultado = -1;
             }
