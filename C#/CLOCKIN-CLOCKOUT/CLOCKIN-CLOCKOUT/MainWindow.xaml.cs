@@ -30,5 +30,11 @@ namespace CLOCKIN_CLOCKOUT
             Login log = new Login();
             log.Visibility = Visibility.Visible;
         }
+
+        private void BntEnd_Click(object sender, RoutedEventArgs e)
+        {
+            CheckOutConfirmation cout = new CheckOutConfirmation();
+            cout.Visibility = Visibility.Visible;
+        }
     }
 }

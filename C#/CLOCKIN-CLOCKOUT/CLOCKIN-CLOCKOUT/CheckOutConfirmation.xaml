@@ -1,0 +1,15 @@
+﻿<Window x:Class="CLOCKIN_CLOCKOUT.CheckOutConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CLOCKIN_CLOCKOUT"
+        mc:Ignorable="d"
+        Title="CheckOutConfirmation" Height="204.5" Width="344.5">
+    <Grid>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="37,23,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <PasswordBox Margin="37,59,37,0" VerticalAlignment="Top" Height="30"/>
+        <Button x:Name="btnCheckOut" Content="Check Out" Margin="120,108,120,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="CLOCK IN - CLOCK OUT" HorizontalAlignment="Left" Margin="23,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="btnStart" Content="START" HorizontalAlignment="Left" Margin="106,98,0,0" VerticalAlignment="Top" Width="116" FontSize="24" FontWeight="Bold" Height="86" Click="BtnStart_Click"/>
-        <Button x:Name="bntEnd" Content="END" HorizontalAlignment="Left" Margin="106,252,0,0" VerticalAlignment="Top" Width="116" FontSize="24" FontWeight="Bold" Height="86"/>
+        <Button x:Name="bntEnd" Content="END" HorizontalAlignment="Left" Margin="106,252,0,0" VerticalAlignment="Top" Width="116" FontSize="24" FontWeight="Bold" Height="86" Click="BntEnd_Click"/>
         <DataGrid HorizontalAlignment="Left" Height="330" Margin="338,26,0,0" VerticalAlignment="Top" Width="412">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="EMPLOYEE" Width="*"/>
