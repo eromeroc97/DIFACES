@@ -92,5 +92,10 @@ namespace LoginWithOracle.Presentacion
         {
 
         }
+
+        private void DatagridUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

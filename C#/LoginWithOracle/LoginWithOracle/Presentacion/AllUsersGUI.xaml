@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AllUsersGUI" Height="366.495" Width="393.196">
     <Grid>
-        <DataGrid x:Name="datagridUsers" ItemsSource="{Binding}" Height="309" Margin="10,10,148,0" VerticalAlignment="Top">
+        <DataGrid x:Name="datagridUsers" ItemsSource="{Binding}" Height="309" Margin="10,10,148,0" VerticalAlignment="Top" SelectionChanged="DatagridUsers_SelectionChanged">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
