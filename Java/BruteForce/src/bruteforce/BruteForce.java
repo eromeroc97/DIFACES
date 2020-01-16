@@ -23,7 +23,7 @@ public class BruteForce {
      */
     
     private final String PASSWD_CHARS = "ABCDEFGHIJKLMNOPQRTSUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-    public final int START_VALUE = PASSWD_CHARS.length();
+    public final int START_VALUE = 0;
     
     private String generatePassword(int length){
         StringBuilder sbPasswd = new StringBuilder();
