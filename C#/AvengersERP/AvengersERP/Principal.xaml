@@ -1,0 +1,22 @@
+﻿<Window x:Class="AvengersERP.Principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wpfc="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvengersERP"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Principal" Height="744.5" Width="1190">
+    <DockPanel LastChildFill="True">
+        <StackPanel Name="stackPanel1" DockPanel.Dock="Left" Width="176" >
+            <Button Content="Users" d:LayoutOverrides="Height" Height="70" Click="Button_Click"/>
+            <Button Content="Roles" d:LayoutOverrides="Height" Height="70" Click="Button_Click_1"/>
+            <Button Content="Customer" d:LayoutOverrides="Height" Height="70" Click="Button_Click_2"/>
+            <Button Content="Orders" d:LayoutOverrides="Height" Height="70" Click="Button_Click_3"/>
+        </StackPanel>
+        <StackPanel Name="Panel" >
+            <ContentControl Name="Control" Height="714"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

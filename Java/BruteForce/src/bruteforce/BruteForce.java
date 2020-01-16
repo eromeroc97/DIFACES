@@ -19,7 +19,7 @@ public class BruteForce {
      */
     
     private final String PASSWD_CHARS = "ABCDEFGHIJKLMNOPQRTSUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-    public final int START_VALUE = PASSWD_CHARS.length();
+    public final int START_VALUE = 0;
     
     private String generatePassword(int length){
         StringBuilder sbPasswd = new StringBuilder();
@@ -38,11 +38,15 @@ public class BruteForce {
     aa  ab  ac...    ba bb bc...  
     */
     
-    private void crackPassword(String passwd, String generated,){
+    private void crackPassword(String passwd, String generated){
+        int i;
         if(generated.equals(passwd)){
             System.out.printf("### PASSWORD HAS BEEN CRACKED ###\n");
         }else{
-            
+            for(i = 0; i < PASSWD_CHARS.length(); i++){
+                generated += PASSWD_CHARS.charAt(i);
+                crackPassword(passwd, generated);
+            }
         }
     }
     
@@ -50,7 +54,7 @@ public class BruteForce {
     public static void main(String[] args) {
         BruteForce bf = new BruteForce();
         String passwd = bf.generatePassword(1);
-        bf.crackPassword(passwd, "", bf.START_VALUE);
+        bf.crackPassword(passwd, "");
     }
 
 }
