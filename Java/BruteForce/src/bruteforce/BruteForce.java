@@ -6,7 +6,11 @@
 
 package bruteforce;
 
+import java.io.IOException;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,23 +42,47 @@ public class BruteForce {
     aa  ab  ac...    ba bb bc...  
     */
     
-    private void crackPassword(String passwd, String generated){
-        int i;
-        if(generated.equals(passwd)){
-            System.out.printf("### PASSWORD HAS BEEN CRACKED ###\n");
-        }else{
-            for(i = 0; i < PASSWD_CHARS.length(); i++){
-                generated += PASSWD_CHARS.charAt(i);
-                crackPassword(passwd, generated);
+    private void crackPassword(char[] arr, int i, String s, int len, String buscada){ 
+        if (i == 0){ 
+            System.out.printf("\tTrying with: %s\n",s); 
+            return; 
+        } 
+  
+        for (int j = 0; j < len; j++){
+            
+            String appended = s + arr[j];
+            if(appended.equals(buscada)){
+                
+                System.out.printf("Unlocked: %s\n",appended);
+                System.out.println("*** PASSWORD HAS BEEN CRACKED ***");
+                System.exit(0);
             }
+            crackPassword(arr, i - 1, appended, len, buscada); 
+            
         }
     }
     
+    private void crackPassword(int length, String passwd) 
+    {
+        for (int i = 1; i <= length; i++) 
+        { 
+            crackPassword(PASSWD_CHARS.toCharArray(), i, "", PASSWD_CHARS.length(), passwd);
+        } 
+    } 
+
     
+    private final static Scanner Teclado = new Scanner(System.in);
     public static void main(String[] args) {
+        System.out.print("Choose a length for a new password: ");
+        int leido = Teclado.nextInt();
         BruteForce bf = new BruteForce();
-        String passwd = bf.generatePassword(1);
-        bf.crackPassword(passwd, "");
+        String passwd = bf.generatePassword(leido);
+        System.out.println("Click ENTER to start Brute Force");
+        try {
+            System.in.read();
+        } catch (IOException ex) {}
+        bf.crackPassword(leido, passwd);
+        long end = System.nanoTime();
     }
 
 }
